@@ -49,16 +49,15 @@ const Schema = mongoose.Schema;
     });
 
     const mainlandTable = HtmlTableToJson.parse(data.a[0]);
-    const regionTable = HtmlTableToJson.parse(data.a[1]);
-    const internationalTable = HtmlTableToJson.parse(data.a[2]);
+    const otherPlacesTable = HtmlTableToJson.parse(data.a[1]);
+ /*   const internationalTable = HtmlTableToJson.parse(data.a[2]);*/
     const mainlandTableResult = JSON.stringify(mainlandTable.results.flat());
-    const regionTableResult = JSON.stringify(regionTable.results.flat());
-    const internationalTableResult = JSON.stringify(internationalTable.results.flat());
+    const otherPlacesTableResult = JSON.stringify(otherPlacesTable.results.flat());
+/*    const internationalTableResult = JSON.stringify(internationalTable.results.flat());*/
 
     const instance = new Data({
         mainland: mainlandTableResult,
-        region: regionTableResult,
-        international: internationalTableResult
+        region: otherPlacesTableResult
     });
     instance.save((err,data) =>  {
         if(err){
