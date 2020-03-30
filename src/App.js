@@ -1,20 +1,16 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import "semantic-ui-css/semantic.min.css";
-import {Container, Button, Grid, Image} from 'semantic-ui-react'
-import Map from './Map';
-
-function App() {
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {BrowserRouter, Route, Switch} from "react-router-dom";
+import Home from './views/Home';
+import About from './views/About';
+const App = () => {
     return (
-        <div id="root">
-            <Grid.Column columns="16" className="App-main">
-                <Container>
-                    <Map/>
-                    <Button>Click Here !</Button>
-                </Container>
-            </Grid.Column>
-        </div>
+        <BrowserRouter>
+            <Route path="/" exact component={Home}/>
+            <Route path="/about" component={About}/>
+            <Route path="/covid-19" component={Home}/>
+        </BrowserRouter>
     );
 }
 
