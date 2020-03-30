@@ -20,7 +20,7 @@ export const Tag = ({bg,type}) => {
         percantage.map((item,index) => {
             return(
                 <div>
-                    <Button variant={bg}><FontAwesomeIcon icon={faArrowUp} className='mr-1' />{type === 'case' ? item.caseRatio + '%'  : type === 'death' ? item.deathRatio + '%' : type === 'recovery' ? item.recoveredRatio + '%' : type === 'unresolved' ? item.unresolvedRatio + '%' : ''}</Button>
+                    <Button variant={bg}><FontAwesomeIcon icon={faArrowUp} className='mr-1' />{type === 'case' ? item.caseRatio : type === 'death' ? item.deathRatio : type === 'recovery' ? item.recoveredRatio : type === 'unresolved' ? item.unresolvedRatio : ''}</Button>
                 </div>
             )
 
